@@ -27,7 +27,7 @@ This project is an implementation of the famous life simulation game, the Game o
     ```bash
     git clone https://github.com/Deomorphisme/The-Game-Of-Life.git
     ```
-2. Launch the web server for the simulation
+2. Grant permission to execute the script
     ```bash
     cd The-Game-Of-Life
     chmod +x launch-server.sh # Only the first time, to make the script executable otherwise you're not allowed
@@ -40,7 +40,7 @@ This project is an implementation of the famous life simulation game, the Game o
 ## Usage
 
 The script `launch-server.sh` creates a web server which allow us to run the project coded in Javascript.
-* Open the url, that appear in your terminal, in your browser. It should look like `http://[::]:8080` or `http://localhost:8080` or `http://127.0.0.1:8080`
+* Open the url, that appear in your terminal, in your browser. It should look like `http://[::]:8080` or `http://localhost:8080` or `http://127.0.0.1:8080`.
 * Click on cells to toggle them on or off.
 * Use the buttons to control the simulation.
 
