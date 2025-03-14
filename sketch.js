@@ -39,52 +39,52 @@ class Grid {
     this.cells = [];
 
     for (let i = 0; i < this.num_cells; i++) {
-      // Crée une nouvelle ligne
+      // Create a new row
       this.cells[i] = [];
 
       for (let j = 0; j < this.num_cells; j++) {
-        let cell_position_X = X + j * step; // Note l'inversion de i et j ici
-        let cell_position_Y = Y + i * step; // Note l'inversion de i et j ici
+        let cell_position_X = X + j * step;
+        let cell_position_Y = Y + i * step;
 
-        // Crée une nouvelle cellule et l'ajoute à la ligne
+        // Create a new cell and add it to the row
         this.cells[i][j] = new Cell(true, this.cell_size, cell_position_X, cell_position_Y);
       }
     }
   }
 
   update() {
-    let nextGen = []; // Nouvelle génération de cellules
+    let nextGen = []; // Next cells generation
   
     for (let i = 0; i < this.num_cells; i++) {
       nextGen[i] = [];
       for (let j = 0; j < this.num_cells; j++) {
         let cell = this.cells[i][j];
-        let neighbors = this.countNeighbors(i, j); // Compte les voisins
+        let neighbors = this.countNeighbors(i, j); // Counting the neigthbors
   
-        // Règles du Game of Life
+        // rules
         if (cell.isAlive) {
           if (neighbors < 2 || neighbors > 3) {
-            nextGen[i][j] = new Cell(false, this.cell_size, cell.position.x, cell.position.y); // Mort
+            nextGen[i][j] = new Cell(false, this.cell_size, cell.position.x, cell.position.y); // Dead
           } else {
-            nextGen[i][j] = new Cell(true, this.cell_size, cell.position.x, cell.position.y); // Vit
+            nextGen[i][j] = new Cell(true, this.cell_size, cell.position.x, cell.position.y); // Alive
           }
         } else {
           if (neighbors === 3) {
-            nextGen[i][j] = new Cell(true, this.cell_size, cell.position.x, cell.position.y); // Naissance
+            nextGen[i][j] = new Cell(true, this.cell_size, cell.position.x, cell.position.y); // Born
           } else {
-            nextGen[i][j] = new Cell(false, this.cell_size, cell.position.x, cell.position.y); // Mort
+            nextGen[i][j] = new Cell(false, this.cell_size, cell.position.x, cell.position.y); // Dead
           }
         }
       }
     }
-    this.cells = nextGen; // Remplace la grille actuelle par la nouvelle génération
+    this.cells = nextGen; 
   }
   
   countNeighbors(row, col) {
       let count = 0;
       for (let i = -1; i <= 1; i++) {
           for (let j = -1; j <= 1; j++) {
-              if (i === 0 && j === 0) continue; // Ne compte pas la cellule elle-même
+              if (i === 0 && j === 0) continue;
               let neighborRow = row + i;
               let neighborCol = col + j;
               if (neighborRow >= 0 && neighborRow < this.num_cells &&
@@ -134,8 +134,10 @@ function mousePressed() {
 
 let win_size = 800;
 let grid;
-let simulationInterval; // Variable pour stocker l'ID de l'intervalle
-let isPaused = false;   // Variable pour suivre l'état de pause
+let simulationInterval; // Variable for storing interval ID
+let isPaused = false;   // Variable to monitor pause status
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 function setup() {
   createCanvas(win_size, win_size);
@@ -143,31 +145,31 @@ function setup() {
   grid.populate();
   grid.clearGrid();
 
-  // Bouton pour la prochaine itération
+  // Button for next iteration
   document.getElementById('nextIteration').addEventListener('click', function() {
     if (simulationInterval) {
       clearInterval(simulationInterval);
       simulationInterval = null;
       isPaused = false;
     }
-    grid.update(); // Appelle la fonction de mise à jour de la grille
+    grid.update();
   });
 
-  // Bouton pour lancer la simulation
+  // Start simulation button
   document.getElementById('startSimulation').addEventListener('click', function() {
     if (simulationInterval) {
-      // Si la simulation est déjà en cours, arrête-la
+      // If simulation is already running, stop it
       clearInterval(simulationInterval);
       simulationInterval = null;
     } else {
-      // Sinon, démarre la simulation
+      // Otherwise, start the simulation
       simulationInterval = setInterval(function() {
         grid.update();
-      }, 300); // 500 millisecondes = 0.5 secondes
+      }, 300); // 300 millisecondes = 0.3 secondes
     }
   });
 
-  // Bouton pour mettre pause à la simulation
+  // Button to pause simulation
   document.getElementById('pauseSimulation').addEventListener('click', function() {
     if (simulationInterval) {
       clearInterval(simulationInterval);
@@ -176,7 +178,7 @@ function setup() {
     }
   });
 
-  // Bouton clear pour tout effacer
+  // Clear button to erase everything
   document.getElementById('clearGrid').addEventListener('click', function() {
     if (simulationInterval) {
       clearInterval(simulationInterval);
