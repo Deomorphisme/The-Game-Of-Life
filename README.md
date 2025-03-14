@@ -65,4 +65,4 @@ The script `launch-server.sh` creates a web server which allow us to run the pro
 
 ## License
 
-This project is under the [[LICENSE|MIT license]].
+This project is under the [MIT LICENSE](LICENSE).
