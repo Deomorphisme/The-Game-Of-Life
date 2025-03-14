@@ -2,7 +2,7 @@
 
 This project is an implementation of the famous life simulation game, the Game of Life, using the p5.js library for graphical rendering and Tailwind CSS for button styling.
 
-## Features
+## Features 💡
 
 * **Interactive grid:**
     * Click on cells to change their state (alive/dead).
@@ -14,13 +14,18 @@ This project is an implementation of the famous life simulation game, the Game o
 * **Modern style:**
     * Using Tailwind CSS for a clean and responsive design.
 
-## Technologies used
+## Upcoming Features 💭
+
+* Add a slider for increase or decrease the grid size
+* Add information on the living population and the current iteration
+
+## Technologies used ⚙️
 
 * **p5.js:** JavaScript library for creating interactive graphics.
 * **Tailwind CSS:** CSS framework for fast and easy styling.
 * **JavaScript (ES Modules):** For game logic and user interaction.
 
-## Installation
+## Installation ▶️
 
 1.  Clone the repository:
 
@@ -37,32 +42,32 @@ This project is an implementation of the famous life simulation game, the Game o
     ./launch-server.sh
     ```
 
-## Usage
+## Usage 
 
 The script `launch-server.sh` creates a web server which allow us to run the project coded in Javascript.
 * Open the url, that appear in your terminal, in your browser. It should look like `http://[::]:8080` or `http://localhost:8080` or `http://127.0.0.1:8080`.
 * Click on cells to toggle them on or off.
 * Use the buttons to control the simulation.
 
-## Project structure
+## Project structure 🗂️
 
 * `index.html`: Main HTML file.
-* `main.js`: Main JavaScript code (game logic, interaction).
+* `sketch.js`: Main JavaScript code (game logic, interaction).
 * `p5.js`: p5.js library.
 
-## Dependencies
+## Dependencies ⛓️
 
 * p5.js
 * Tailwind CSS (CDN)
 
-## Screenshot
+## Screenshot 📸
 
 ![Screenshot of the project](<images/screenshot demo.png>)
 
-## Author
+## Author 👨‍💻
 
 * Deomorphisme
 
-## License
+## License 📜
 
 This project is under the [MIT LICENSE](LICENSE).
