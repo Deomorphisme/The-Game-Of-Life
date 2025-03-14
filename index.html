@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Game of Life</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #1b1b1b;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script type="module" src="p5.js"></script>
+  <script src="sketch.js"></script>
+  <!-- <script src="../p5.min.js"></script> -->
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <!-- <script type="module" src="Grid.js"></script>
+  <script type="module" src="Cell.js"></script> -->
+</head>
+
+<body class="flex">
+  <main></main>
+  <div class="flex flex-col justify-center ml-4">
+    <button id="startSimulation" class="w-16 h-16 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
+      Start
+    </button>
+    <button id="pauseSimulation" class="w-16 h-16 bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded">
+      Pause
+    </button>
+    <button id="nextIteration" class="w-16 h-16 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded">
+      Next
+    </button>
+    <button id="clearGrid" class="w-16 h-16 bg-red-500 hover:bg-red-700 text-white font-bold rounded">
+      Clear
+    </button>
+  </div>
+</body>
+
+</html>
